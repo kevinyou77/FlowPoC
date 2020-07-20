@@ -11,25 +11,28 @@ import UIKit
 typealias void = ()
 
 class AppCoordinator: Coordinator, CoordinatorOutput {
+
+	var rootViewController: UIViewController {
+		navigationController
+	}
+	private let navigationController: UINavigationController = UINavigationController()
 	
 	typealias Output = Void
 	
 	var onFinishFlow: ((void) -> Void)?
 	
-	var rootViewController = UINavigationController()
-	
-	let greenCoordinator: GreenScreenCoordinator
-	let blueCoordinator: BlueScreenCoordinator
+	var greenCoordinator: GreenScreenCoordinator?
+	var blueCoordinator: BlueScreenCoordinator?
 	
 	var screen: PINScreen?
 	
 	init() {
 
-		greenCoordinator = GreenScreenCoordinator()
-		blueCoordinator = BlueScreenCoordinator()
+		greenCoordinator = GreenScreenCoordinator(navigationController: navigationController)
+//		blueCoordinator = BlueScreenCoordinator()
 		
 		self.configureFinishFlow()
-		self.greenCoordinator.finishFlow = self.onFinishFlow
+		self.greenCoordinator?.finishFlow = self.onFinishFlow
 	}
 	
 	func start() {
@@ -51,19 +54,20 @@ class AppCoordinator: Coordinator, CoordinatorOutput {
 		
 		pinNode.onBlueButtonTap =  {
 			
-			self.blueCoordinator.start()
-			Router.shared.present(self.blueCoordinator.rootViewController, on: self)
+			self.blueCoordinator = nil
 		}
 		
 		pinNode.onGreenButtonTap = {
 			
-			self.greenCoordinator.start()
-			Router.shared.present(self.greenCoordinator.rootViewController, on: self)
+			self.greenCoordinator = nil
+			self.greenCoordinator = GreenScreenCoordinator(navigationController: self.navigationController)
+			self.greenCoordinator?.finishFlow = self.onFinishFlow
+			self.greenCoordinator?.start()
 		}
 		
-		pinNode.onFinish = { [weak self] _ in
+		pinNode.onFinish = { _ in
 			
-			self?.onFinishFlow?(())
+			print("noice")
 		}
 		
 		return pinNode
@@ -72,8 +76,7 @@ class AppCoordinator: Coordinator, CoordinatorOutput {
 	private func configureFinishFlow() {
 		
 		self.onFinishFlow = { _ in
-			
-			print("flow completed")
+			self.navigationController.popToRootViewController(animated: true)
 		}
 	}
 }

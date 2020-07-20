@@ -3,7 +3,7 @@ import UIKit
 
 protocol Coordinator {
 	
-	var rootViewController: UINavigationController { get }
+	var rootViewController: UIViewController { get }
 	
 	func start()
 }

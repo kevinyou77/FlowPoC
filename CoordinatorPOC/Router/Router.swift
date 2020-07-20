@@ -60,8 +60,12 @@ internal final class Router {
 			return
 		}
 
-		if nav.viewControllers.count == 0 {
-			nav.setViewControllers([ viewController ], animated: true)
+		nav.pushViewController(viewController, animated: true)
+	}
+	
+	func push(_ viewController: UIViewController, on coordinator: ChildCoordinator) {
+
+		guard let nav = coordinator.rootViewController as? UINavigationController else {
 			return
 		}
 
@@ -70,15 +74,9 @@ internal final class Router {
 	
 	func present(_ viewController: UIViewController, on coordinator: Coordinator) {
 
-		guard let nav = coordinator.rootViewController as? UINavigationController else {
-			return
-		}
-
-		if nav.viewControllers.count == 0 {
-			nav.setViewControllers([ viewController ], animated: true)
-			return
-		}
-
+		let nav = coordinator.rootViewController
+		
+		viewController.modalPresentationStyle = .fullScreen
 		nav.present(viewController, animated: true, completion: nil)
 	}
 

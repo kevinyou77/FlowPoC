@@ -6,18 +6,18 @@
 //  Copyright © 2020 Kevin Yulias. All rights reserved.
 //
 
-import Foundation
+import UIKit
 
 class GreenScreen: ScreenFactory {
 	
-	typealias ViewControllerType = GreenScreenViewController
+	typealias ViewControllerType = UIViewController
 	typealias MainNode = GreenScreenNode
 	
 	var identifier: String {
 		"PIN"
 	}
 	
-	var viewController: GreenScreenViewController
+	var viewController: UIViewController
 	
 	required init(mainNode: GreenScreenNode) {
 		

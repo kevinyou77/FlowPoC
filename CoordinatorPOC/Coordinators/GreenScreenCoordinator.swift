@@ -8,18 +8,33 @@
 
 import UIKit
 
-class GreenScreenCoordinator: Coordinator {
+class GreenScreenCoordinator: ChildCoordinator {
 	
 	var finishFlow: ((void) -> Void)?
 	
-	var rootViewController = UINavigationController()
+	var rootViewController: UIViewController? {
+		navigationController
+	}
+	
+	let navigationController: UINavigationController
 	
 	var screen: GreenScreen?
+	
+	private var yellowCoordinator: YellowScreenCoordinator?
+	
+	init(navigationController: UINavigationController) {
+		self.navigationController = navigationController
+	}
 	
 	func start() {
 		
 		let greenScreenNode = GreenScreenNode(viewModel: PINViewModel())
-		greenScreenNode.onFinish = self.finishFlow
+		greenScreenNode.onFinish = { _ in
+			
+			self.yellowCoordinator = YellowScreenCoordinator(navigationController: self.navigationController)
+			self.yellowCoordinator!.finishFlow = self.finishFlow
+			self.yellowCoordinator!.start()
+		}
 		let greenScreen = GreenScreen(mainNode: greenScreenNode)
 		Router.shared.push(greenScreen.viewController, on: self)
 	}

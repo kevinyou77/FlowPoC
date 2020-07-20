@@ -6,18 +6,18 @@
 //  Copyright © 2020 Kevin Yulias. All rights reserved.
 //
 
-import Foundation
+import UIKit
 
 class PINScreen: ScreenFactory {
 	
-	typealias ViewControllerType = PINViewController
+	typealias ViewControllerType = UIViewController
 	typealias MainNode = MainPINNode
 	
 	var identifier: String {
 		"PIN"
 	}
 	
-	var viewController: PINViewController
+	var viewController: UIViewController
 	
 	required init(mainNode: MainPINNode) {
 		

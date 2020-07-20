@@ -10,7 +10,15 @@ import UIKit
 
 class BlueScreenCoordinator: Coordinator {
 	
-	var rootViewController = UINavigationController()
+	var rootViewController: UIViewController {
+		navigationController
+	}
+	
+	private let navigationController: UINavigationController
+	
+	init(navigationController: UINavigationController) {
+		self.navigationController = navigationController
+	}
 	
 	func start() {
 		
