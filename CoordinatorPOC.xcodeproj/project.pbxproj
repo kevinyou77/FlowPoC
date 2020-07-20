@@ -29,7 +29,6 @@
 		91A0650724BF201A002BBC67 /* PINViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 91A0650624BF201A002BBC67 /* PINViewController.swift */; };
 		91A0650924BF203E002BBC67 /* MainPINNode.swift in Sources */ = {isa = PBXBuildFile; fileRef = 91A0650824BF203E002BBC67 /* MainPINNode.swift */; };
 		91A0650B24BF2064002BBC67 /* BlueScreenViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 91A0650A24BF2064002BBC67 /* BlueScreenViewController.swift */; };
-		91D50D3324C548000098F06C /* ChildCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 91D50D3224C548000098F06C /* ChildCoordinator.swift */; };
 		91D50D3524C549440098F06C /* YellowScreenCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 91D50D3424C549440098F06C /* YellowScreenCoordinator.swift */; };
 		91D50D3724C54E630098F06C /* YellowScreenNode.swift in Sources */ = {isa = PBXBuildFile; fileRef = 91D50D3624C54E630098F06C /* YellowScreenNode.swift */; };
 		91D50D3924C54E8C0098F06C /* YellowScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = 91D50D3824C54E8C0098F06C /* YellowScreen.swift */; };
@@ -61,7 +60,6 @@
 		91A0650624BF201A002BBC67 /* PINViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PINViewController.swift; sourceTree = "<group>"; };
 		91A0650824BF203E002BBC67 /* MainPINNode.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainPINNode.swift; sourceTree = "<group>"; };
 		91A0650A24BF2064002BBC67 /* BlueScreenViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BlueScreenViewController.swift; sourceTree = "<group>"; };
-		91D50D3224C548000098F06C /* ChildCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChildCoordinator.swift; sourceTree = "<group>"; };
 		91D50D3424C549440098F06C /* YellowScreenCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = YellowScreenCoordinator.swift; sourceTree = "<group>"; };
 		91D50D3624C54E630098F06C /* YellowScreenNode.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = YellowScreenNode.swift; sourceTree = "<group>"; };
 		91D50D3824C54E8C0098F06C /* YellowScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = YellowScreen.swift; sourceTree = "<group>"; };
@@ -130,7 +128,6 @@
 				9184F6B624BED5DA0037315F /* CoordinatorOutput.swift */,
 				91674D0D24B870EF005490CB /* Coordinator.swift */,
 				9184F6BA24BEFBF40037315F /* ScreenFactory.swift */,
-				91D50D3224C548000098F06C /* ChildCoordinator.swift */,
 			);
 			path = Protocols;
 			sourceTree = "<group>";
@@ -294,7 +291,6 @@
 				9184F6BB24BEFBF50037315F /* ScreenFactory.swift in Sources */,
 				9184F6AB24BEB7540037315F /* GreenScreenViewController.swift in Sources */,
 				91A0650924BF203E002BBC67 /* MainPINNode.swift in Sources */,
-				91D50D3324C548000098F06C /* ChildCoordinator.swift in Sources */,
 				9184F6C924BEFCC60037315F /* BlueScreenNode.swift in Sources */,
 				91D50D3924C54E8C0098F06C /* YellowScreen.swift in Sources */,
 				91A0650724BF201A002BBC67 /* PINViewController.swift in Sources */,

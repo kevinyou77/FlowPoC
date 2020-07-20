@@ -37,7 +37,7 @@ class GreenScreenNode: ASDisplayNode {
 	
 	override func layoutSpecThatFits(_ constrainedSize: ASSizeRange) -> ASLayoutSpec {
 		
-		popButton.setTitle("Pop to root", with: .boldSystemFont(ofSize: 20), with: .red, for: .normal)
+		popButton.setTitle("Go to yellow", with: .boldSystemFont(ofSize: 20), with: .red, for: .normal)
 		
 		let stack = ASStackLayoutSpec(
 			direction: .vertical,
